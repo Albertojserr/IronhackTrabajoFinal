@@ -14,26 +14,36 @@ function checkGuess() {
     if (intento>0){
         let Div=document.getElementById('Div1')
         Div.remove()
+        let Div2=document.getElementById('mensaje')
+        Div2.remove()
     }
     let secretNumber = Math.floor(Math.random() * 3);
     let eleccion=elecciones[secretNumber];
     
     let guess=document.getElementById('Eleccion').value
+    let mensaje= document.createElement('div')
+    mensaje.setAttribute("id", "mensaje");
     //e.preventDefault();
     if (guess===eleccion){
-        alert('empate')
+        //alert('empate')
+        
+        mensaje.innerHTML=`<p>${guess}-Empate-${eleccion}</p>`;
     }
     else if(guess==='piedra' && eleccion==='tijera' ||guess==='tijera' && eleccion==='papel' ||guess==='papel' && eleccion==='piedra'){
-        alert('ganaste')
+        //alert('ganaste')
+        mensaje.innerHTML=`<p>${guess}-Ganaste-${eleccion}</p>`;
     }
     else{
-        alert('perdiste')
+        //alert('perdiste')
+        mensaje.innerHTML=`<p>${guess}-Perdiste-${eleccion}</p>`;
     }
     let divTag = document.createElement('div');
     divTag.setAttribute("id", "Div1");
-    divTag.innerHTML = `<img src="${guess}.png"> <p>vs</p> <img src="${eleccion}.png">`;
+    divTag.innerHTML = `<img src="imagenes3/${guess}.png"> <span>VS</span> <img src="imagenes3/${eleccion}.png">`;
     let parent = document.getElementsByTagName('main')[0];
     parent.appendChild(divTag);
+    parent = document.getElementsByTagName('main')[0];
+    parent.appendChild(mensaje);
     intento++;
   /* Your code goes here */
 
