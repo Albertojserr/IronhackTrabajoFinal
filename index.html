@@ -10,20 +10,36 @@
 
 <body>
   <header>
-    <h1>Piedra, papel y tijera - Versión Clásica</h1>
-    <h4>Elige tu jugada y dale al botón</h4>
+    <h1>Piedra, papel o tijera - Versión Clásica</h1>
+    <h4>Elige tu jugada en los botones de la izquierda</h4>
   </header>
 
   <main>
-    <select id="Eleccion">
-        <option value="piedra">piedra</option>
-        <option value="papel">papel</option>
-        <option value="tijera">tijera</option>
-        
-    </select>
-    <button id="guess-btn">Pieedra... Papeel... o Tijera</button>
-    <br>
-    <br>
+    <div id="columna1">
+      <div id="botones">
+        <button id="btnpiedra"><img src="imagenes5/piedra.png" alt="piedra"></button>
+        <button id="btnpapel"><img src="imagenes5/papel.png" alt="papel"></button>
+        <button id="btntijera"><img src="imagenes5/tijera.png" alt="tijera"></button>
+      </div>
+    </div>
+    <div id="columna2">
+      <br>
+      <br>
+    </div>
+    <div id="columna3">
+      <table class="default">
+        <tr>
+          <th>Ganados</th>
+          <th>Perdidos</th>
+          <th>Jugados</th>
+        </tr>
+        <tr>
+          <td id="ganados">0</td>
+          <td id="perdidos">0</td>
+          <td id="jugados" rowspan="3">0</td>
+        </tr>
+      </table>
+    </div>
   </main>
 
   <script src="script.js"></script>
