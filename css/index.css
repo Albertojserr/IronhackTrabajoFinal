@@ -24,9 +24,9 @@ header h1 {
   /* Form */
 
 main {
+    display: flex;
     text-align: center;
     margin: 30px 0px 0px;
-    display: flex;
     flex-direction:row;
     justify-content: space-between;
 }
@@ -38,12 +38,14 @@ p{
     #columnas{
         width: 30%;
     }
+    .enlace{
+        height: 380px;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+    }
 }
 @media(max-width:800px){
-    #Div1 img{
-        width: 100px;
-        height: 100px;
-    }
     main{
         flex-direction: column;
     }
