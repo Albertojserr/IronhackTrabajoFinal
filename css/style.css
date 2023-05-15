@@ -2,6 +2,8 @@
     padding: 0px;
     margin: 0;
     font-family: 'Tahoma', sans-serif;
+    background-color: #e5e2e2;
+    color: #303030;
 }
 
 body {
@@ -38,7 +40,6 @@ input, button {
 button {
     border: none;
     font-size: 16px;
-    background-color: rgb(255, 255, 255);
 }
 #botones{
     display: flex;

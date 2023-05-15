@@ -1,7 +1,4 @@
-// Secret number: what the user will have to guess
-//let secretNumber = Math.floor(Math.random() * 3);
 const elecciones=['piedra','papel','tijera'];
-//let eleccion=elecciones[secretNumber];
 let intento=0;
 let ganas=0;
 let pierdes=0;
@@ -24,8 +21,8 @@ Botonpa.onclick=function(){
     checkGuess(guess)
 }
 function checkGuess(guess) {
+    //Sonará una música de combate cuando salgan las imágenes
     etiquetaAudio.pause()
-    //set time out
     setTimeout(function sonido(){etiquetaAudio.play()},1000);
     if (intento>0){
         let Div=document.getElementById('Div1')
@@ -34,11 +31,13 @@ function checkGuess(guess) {
         Div2.remove()
     }
     intento++;
+    //La máquina elige su jugada aleatoriamente
     let secretNumber = Math.floor(Math.random() * 3);
     let eleccion=elecciones[secretNumber];
     let mensaje= document.createElement('div')
     mensaje.setAttribute("id", "mensaje");
     let text="";
+    //Comprobamos si ganamos, empatamos o perdemos
     if (guess===eleccion){
         mensaje.innerHTML=`<br><h2>Empate</h2><p>${guess} no mata ${eleccion}</p>`;
         text="=";
@@ -73,9 +72,10 @@ function checkGuess(guess) {
         perdidos.innerText=`${pierdes}`;
         text="-";
     }
+    //Creamos un div que contendrá la jugada del jugador, de la máquina y el resultado
     let divTag = document.createElement('div');
     divTag.setAttribute("id", "Div1");
-    divTag.innerHTML = `<img src="imagenes5/${guess}.png" alt=${guess} width="200px"> <img src="imagenes5/vs2.png" alt="versus" height="185px"><img src="imagenes5/${eleccion}.png" alt=${eleccion} width="200px">`;
+    divTag.innerHTML = `<img src="imagenes/${guess}.png" alt=${guess} width="200px"> <img src="imagenes/vs2.png" alt="versus" height="185px"><img src="imagenes/${eleccion}.png" alt=${eleccion} width="200px">`;
     let parent = document.getElementById("columna2");
     console.log(parent)
     parent.appendChild(divTag);
@@ -84,17 +84,9 @@ function checkGuess(guess) {
 
     let jugados=document.getElementById('jugados')
     jugados.innerText=`${intento}`;
-
+    //Añadimos la jugada en la tabla
     let tabla=document.getElementsByClassName("default")
     let tr=document.createElement('tr')
     tr.innerHTML=`<td>${guess}</td><td>${eleccion}</td><td>${text}</td>`;
     tabla[0].appendChild(tr)
-
 }
-
-
-/*boton.addEventListener("click", () => {
-    let etiquetaAudio = document.createElement("audio")
-    etiquetaAudio.setAttribute("src", "ubicación de tu archivo de audio")
-    etiquetaAudio.play()
-  })*/

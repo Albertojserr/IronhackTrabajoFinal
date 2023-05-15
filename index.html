@@ -4,45 +4,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Number guessing game</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>Página de juegos</title>
+  <link href="./css/index.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <header>
-    <h1>Piedra, papel o tijera - Versión Clásica</h1>
-    <h4>Elige tu jugada en los botones de la izquierda</h4>
-  </header>
+    <header>
+        <h1>Juegos disponibles</h1>
+        <h4>Elige uno de los tres juegos que tenemos para jugarlo</h4>
+    </header>
 
-  <main>
-    <div id="columna1">
-      <div id="botones">
-        <button id="btnpiedra"><img src="imagenes5/piedra.png" alt="piedra"></button>
-        <button id="btnpapel"><img src="imagenes5/papel.png" alt="papel"></button>
-        <button id="btntijera"><img src="imagenes5/tijera.png" alt="tijera"></button>
-      </div>
-    </div>
-    <div id="columna2">
-      <br>
-      <br>
-    </div>
-    <div id="columna3">
-      <table class="default">
-        <tr>
-          <th>Ganados</th>
-          <th>Perdidos</th>
-          <th>Jugados</th>
-        </tr>
-        <tr>
-          <td id="ganados">0</td>
-          <td id="perdidos">0</td>
-          <td id="jugados" rowspan="3">0</td>
-        </tr>
-      </table>
-    </div>
-  </main>
+    <main>
+        <!--Creamos la columna para cada juego-->
+        <div  id="columnas">
+            <a href="piepaptij.html" target="_blank"><img src="imagenes/ppt.png" alt="Piedra, papel o tijera"></a>
+            <p>El clásico piedra, papel o tijera.</p>
+        </div>
+        <div id="columnas">
+            <a href="piepaptijlagspk.html" target="_blank"><img src="imagenes/pptls.png" alt="Piedra, papel, tijera, lagarto, spock"></a>
+            <p>Una versión distinta del clásico piedra, papel o tijera pero esta vez añadiendo lagarto y spock.</p>
+        </div>
+        <div id="columnas">
+            <a href="mastermind.html" target="_blank"><img src="imagenes/mastermind.png" alt="Mastermind"></a>
+            <p>El juego del mastermind donde tendrás que encontrar la combinación de colores generada por la máquina.</p>
+        </div>
+    </main>
 
-  <script src="script.js"></script>
 </body>
 
 </html>
